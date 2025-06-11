@@ -8,6 +8,8 @@ This project provides a Python script to extract audio from MP4 video files, tra
 *   **Accurate Transcription:** Leverages OpenAI's Whisper model for high-quality speech-to-text conversion.
 *   **Proper Punctuation:** Generates subtitles with correct punctuation.
 *   **SRT Output:** Creates industry-standard SRT subtitle files with precise timestamps.
+*   **Batch Processing:** Processes all MP4 files within a specified folder.
+*   **Overwrites Intermediate Files:** Automatically overwrites intermediate audio (.wav) and subtitle (.srt) files in the same folder.
 *   **Easy to Use:** Designed for straightforward execution on your local machine.
 
 ## Prerequisites
@@ -20,9 +22,6 @@ Before you begin, ensure you have the following installed:
     pip install uv
     ```
 *   **FFmpeg:** A complete, cross-platform solution to record, convert and stream audio and video. Download it from [ffmpeg.org](https://ffmpeg.org/download.html) and ensure it's added to your system's PATH.
-
-
-
 
 ## Project Setup
 
@@ -42,12 +41,9 @@ Before you begin, ensure you have the following installed:
 
     This will install `openai-whisper` and `ffmpeg-python`.
 
-
-
-
 ## How to Run the Script
 
-1.  **Place your MP4 file:** Put the MP4 video file you want to subtitle in the same directory as the `main.py` script, or provide the full path to the video file when prompted.
+1.  **Place your MP4 files:** Put all the MP4 video files you want to subtitle into a single folder.
 
 2.  **Run the script:** Execute the `main.py` script from your terminal:
 
@@ -55,12 +51,9 @@ Before you begin, ensure you have the following installed:
     python main.py
     ```
 
-3.  **Enter video path:** The script will prompt you to enter the path to your MP4 video file. You can drag and drop the file into the terminal window to automatically paste its path, or type it manually.
+3.  **Enter folder path:** The script will prompt you to enter the path to the folder containing your MP4 video files. You can drag and drop the folder into the terminal window to automatically paste its path, or type it manually.
 
-4.  **Output:** After processing, an SRT file with the same name as your video file (e.g., `your_video.srt`) will be created in the same directory as your video.
-
-
-
+4.  **Output:** For each MP4 file in the specified folder, an SRT file with the same name (e.g., `your_video.srt`) will be created in the same directory. Any existing `.wav` or `.srt` files with matching names will be overwritten.
 
 ## Playing Subtitles in Windows Media Player
 
@@ -78,6 +71,5 @@ Windows Media Player (WMP) can play SRT subtitle files if they are named correct
         *   Right-click on the video playback area.
         *   Go to `Lyrics, captions, and subtitles`.
         *   Select `On if available` or `On`.
-
 
 
