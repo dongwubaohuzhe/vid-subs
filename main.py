@@ -9,6 +9,7 @@ import datetime
 # For example, on Windows: FFMPEG_PATH = r'C:\ffmpeg\bin\ffmpeg.exe'
 # On macOS/Linux, if not in PATH: FFMPEG_PATH = '/usr/local/bin/ffmpeg'
 FFMPEG_PATH = 'ffmpeg' # Default: assumes ffmpeg is in system PATH
+FFMPEG_PATH = r'C:\Programs\ffmpeg\bin\ffmpeg.exe'
 
 # --- Functions --- #
 
@@ -156,9 +157,9 @@ def main():
             continue
 
         # Clean up audio file
-        if os.path.exists(audio_file):
-            os.remove(audio_file)
-            print(f"Cleaned up audio file: {audio_file}")
+        #if os.path.exists(audio_file):
+        #    os.remove(audio_file)
+        #    print(f"Cleaned up audio file: {audio_file}")
 
         print(f"Subtitles generated successfully for {video_file_name} at: {srt_file}")
 
