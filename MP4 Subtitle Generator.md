@@ -10,6 +10,7 @@ This project provides a Python script to extract audio from MP4 video files, tra
 *   **SRT Output:** Creates industry-standard SRT subtitle files with precise timestamps.
 *   **Batch Processing:** Processes all MP4 files within a specified folder.
 *   **Overwrites Intermediate Files:** Automatically overwrites intermediate audio (.wav) and subtitle (.srt) files in the same folder.
+*   **Flexible FFmpeg Path:** Allows specifying the FFmpeg executable path directly in the script or via user input if not in system PATH.
 *   **Easy to Use:** Designed for straightforward execution on your local machine.
 
 ## Prerequisites
@@ -21,7 +22,8 @@ Before you begin, ensure you have the following installed:
     ```bash
     pip install uv
     ```
-*   **FFmpeg:** A complete, cross-platform solution to record, convert and stream audio and video. Download it from [ffmpeg.org](https://ffmpeg.org/download.html) and ensure it's added to your system's PATH.
+*   **FFmpeg:** A complete, cross-platform solution to record, convert and stream audio and video. Download it from [ffmpeg.org](https://ffmpeg.org/download.html).
+    *   **Important:** It's highly recommended to add FFmpeg to your system's PATH environment variable for seamless operation. If you don't, the script will prompt you to enter the path to the FFmpeg executable.
 
 ## Project Setup
 
@@ -51,9 +53,11 @@ Before you begin, ensure you have the following installed:
     python main.py
     ```
 
-3.  **Enter folder path:** The script will prompt you to enter the path to the folder containing your MP4 video files. You can drag and drop the folder into the terminal window to automatically paste its path, or type it manually.
+3.  **FFmpeg Path (if prompted):** If FFmpeg is not found in your system's PATH, the script will prompt you to enter the full path to your FFmpeg executable (e.g., `C:\ffmpeg\bin\ffmpeg.exe` on Windows or `/usr/local/bin/ffmpeg` on macOS/Linux). You can also set the `FFMPEG_PATH` variable directly in `main.py` if you prefer.
 
-4.  **Output:** For each MP4 file in the specified folder, an SRT file with the same name (e.g., `your_video.srt`) will be created in the same directory. Any existing `.wav` or `.srt` files with matching names will be overwritten.
+4.  **Enter folder path:** The script will then prompt you to enter the path to the folder containing your MP4 video files. You can drag and drop the folder into the terminal window to automatically paste its path, or type it manually.
+
+5.  **Output:** For each MP4 file in the specified folder, an SRT file with the same name (e.g., `your_video.srt`) will be created in the same directory. Any existing `.wav` or `.srt` files with matching names will be overwritten.
 
 ## Playing Subtitles in Windows Media Player
 
